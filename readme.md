@@ -1,6 +1,6 @@
 
 # PPM (Under Development)
-g Coded In C++ with minimal dependencies as possible  and Various GUI Options.
+Modern Cross-Platform Enhanced Media Player Coded In C++ with minimal dependencies as possible  and Various GUI Options.
 
 <img src="assets/Screenshoot.png" width="80%" style="margin-left:10%">
 
