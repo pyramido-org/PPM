@@ -10,13 +10,209 @@
   <meta name="description" content="PPM pyarmido music player" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
   <link rel="stylesheet" href="styles/style.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="../node/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link href="icons/fontawesome-free-6.5.1-web/css/fontawesome.css" rel="stylesheet">
+  <link href="icons/fontawesome-free-6.5.1-web/css/brands.css" rel="stylesheet">
+  <link href="icons/fontawesome-free-6.5.1-web/css/solid.css" rel="stylesheet">
+
   <title>PPM</title>
 
 </head>
 
 <body>
+  <!--  Side  -->
+  <div id="side">
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary">
+      <ul class="nav nav-pills flex-column mb-auto" id="side_nav">
+        <!-- Home -->
+        <li class="nav-item mb-1">
+          <div class="nav-item-i"><i class="fa-solid fa-house"></i>home</div>
+        </li>
+        <!-- Radio -->
+        <li class="nav-item mb-1">
+          <div class="nav-item-i"><i class="fa-solid fa-radio"></i>radio</div>
+        </li>
+        <!-- spotify -->
+        <li class="nav-item mb-1">
+          <div class="nav-item-i"><i class="fa-brands fa-spotify"></i>spotify</div>
+        </li>
+        <!-- podcast -->
+        <li class="nav-item mb-1">
+          <div class="nav-item-i"><i class="fa-solid fa-podcast"></i>podscast</div>
+        </li>
+      </ul>
+      <!-- library -->
+      <div id="library">
+        <div id="library_head">
+          <span id="library_head_">library</span>
+          <ul id="library_head_head">
+            <li class="button library_head_btn library_head_btn_input" style="float: right;">
+              <i class="fa-solid fa-search"></i>
+            </li>
+            <li class="button library_head_btn library_head_btn_input" style="float: right;">
+              <i class="fa-solid fa-plus"></i>
+            </li>
+            <li class="button library_head_btn expander_bt" style="float: right;">
+              <i class="fa-solid fa-right-to-bracket" style="  transform: rotate(180deg);"></i>
+            </li>
+          </ul>
+          <div id="library_head_input">
+            <i class="fa-solid fa-square-check button" id="library_head_input_ok"></i>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <div id="library_items">
+          <ul>
+            <li class="library_item">
+              <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
+                class="rounded-circle flex-shrink-0">
+              <p class="mb-0 library_item_head"> playlist 1</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="side_mini">
 
+    <div class="d-flex flex-column flex-shrink-0">
+      <ul class="nav flex-column mb-auto" id="mini_side_nav">
+        <!-- Home -->
+        <li class="nav-item nav-item-i">
+          <i class="fa-solid fa-house"></i>
+        </li>
+        <!-- Radio -->
+        <li class="nav-item nav-item-i">
+          <i class="fa-solid fa-radio"></i>
+        </li>
+        <!-- spotify -->
+        <li class="nav-item nav-item-i">
+          <i class="fa-brands fa-spotify"></i>
+        </li>
+        <!-- podcast -->
+        <li class="nav-item nav-item-i">
+          <i class="fa-solid fa-podcast"></i>
+        </li>
+      </ul>
+      <!--library -->
+      <div id="mini_library">
+        <div>
+          <!-- expand -->
+          <a href="#" class="d-block link-body-emphasis text-decoration-none expander_bt" id="expander">
+            <i class="fa-solid fa-right-to-bracket" style="font-size: 16px;color: var(--text-color);"></i>
+          </a>
+          <ul id="mini_library_items">
+            <li class="mini_library_item">
+              <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
+  </div>
+  <!-- Main View -->
+  <div id="main">
+    <div id="top">
+      <div class="container p-3">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" id="top_opt">
+          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+            <li class="top_opt_item"><a href="#" class="nav-link text-white">
+                <i class="fa-solid fa-compact-disc"></i>
+                tracks</a></li>
+            <li class="top_opt_item"><a href="#" class="nav-link text-secondary">
+                <i class="fa-solid fa-compact-disc"></i>
+                albums</a></li>
+            <li class="top_opt_item"><a href="#" class="nav-link text-secondary">
+                <i class="fa-solid fa-user"></i>
+                artists</a></li>
+            <li class="top_opt_item"><a href="#" class="nav-link text-secondary">
+                <i class="fa-solid fa-compact-disc"></i>
+                genres</a></li>
+          </ul>
+          <!--
+            Options
+            -->
+          <div class="dropdown text-end" id="options">
+            <a href="#" class="d-block link-body-emphasis text-decoration-none" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="fa-solid fa-ellipsis"></i>
+            </a>
+            <ul class="dropdown-menu text-small">
+              <li><a class="dropdown-item" href="#">
+                  <i class="fa-solid fa-gear"></i>
+                  preferences
+                </a></li>
+              <li><a class="dropdown-item" href="#">
+                  <i class="fa-solid fa-keyboard"></i>
+                  keyboard shortcuts
+                </a></li>
+              <li><a class="dropdown-item" href="#">
+                  <i class="fa-solid fa-info"></i>
+                  about PPM
+                </a></li>
+              <li><a class="dropdown-item" href="#">
+                  <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                  Support
+                </a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                  Quit</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div id="items">
+      <!--
+    JS Components
+    -->
+    </div>
+  </div>
+  <!-- Player -->
+  <div id="player">
+    <div id="player_data">
+      <img id="player_data_cover" src="https://i.scdn.co/image/ab67616d0000b273f894be72a77b1488292672c7">
+      <div id="player_data_head">
+        <p id="player_data_title">summer time sadness</p>
+        <p id="player_data_artist">Lana Del Rey</p>
+      </div>
+      <i class="fa-regular fa-heart button" id="player_data_love"></i>
+    </div>
+    <div id="player_controls">
+      <div id="player_controls_progress">
+        <span id="controls_progress_time_start">12:88</span>
+        <div id="player_controls_progress_bar">
+          <span id="player_controls_progress_pos"></span>
+        </div>
+        <span id="controls_progress_time_end">82:88</span>
+      </div>
+      <div id="player_controls_buttons">
+        <ul>
+          <li class="player_controls_bt btn" id="player_controls_repeat"><i class="fa-solid fa-repeat"></i></li>
+          <li class="player_controls_bt btn" id="player_controls_fw"><i class="fa-solid fa-forward"></i></li>
+          <li class="player_controls_bt btn" id="player_controls_play"><i class="fa-solid fa-play"></i></li>
+          <li class="player_controls_bt btn" id="player_controls_bw"><i class="fa-solid fa-backward"></i></li>
+          <li class="player_controls_bt btn" id="player_controls_shuffle"><i class="fa-solid fa-shuffle"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <ul id="player_settings">
+        <li class="player_settings_bt btn" id="player_settings_current"><i class="fa-solid fa-list"></i></li>
+        <li class="player_settings_bt btn" id="player_settings_share"><i class="fa-solid fa-share"></i></li>
+        <li class="player_settings_bt btn" id="player_settings_volume"><i class="fa-solid fa-volume-low"></i></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="../node/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/view.js"></script>
 </body>
-
 </html>
